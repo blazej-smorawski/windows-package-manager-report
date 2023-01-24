@@ -1,0 +1,60 @@
+0: kd> !devstack HarddiskVolume1
+  !DevObj           !DrvObj            !DevExt           ObjectName
+  ffffdb0586707030  \Driver\volsnap    ffffdb0586707180  
+  ffffdb05865c3d20  \Driver\volume     ffffdb05865c3e70  
+  ffffdb05866078d0  \Driver\rdyboost   ffffdb0586607a20  
+  ffffdb05866098d0  \Driver\iorate     ffffdb0586609a20  
+  ffffdb0586705030  \Driver\fvevol     ffffdb0586705180  
+> ffffdb058660e8f0  \Driver\volmgr     ffffdb058660ea40  HarddiskVolume1
+
+
+
+0: kd> !drvobj volmgr
+Driver object (ffff960c40734e10) is for:
+ \Driver\volmgr
+
+Driver Extension List: (id , addr)
+
+Device Object list:
+ffff960c40860870  ffff960c4073aba0  
+
+
+
+0: kd> !devobj ffff960c40860870
+Device object (ffff960c40860870) is for:
+ HarddiskVolume1 \Driver\volmgr DriverObject ffff960c40734e10
+Current Irp 00000000 RefCount 40417 Type 00000007 Flags 00201150
+Vpb 0xffff960c408d5ab0 SecurityDescriptor ffffba0bda859060 DevExt ffff960c408609c0 DevObjExt ffff960c40860b88 Dope ffff960c408d5180 DevNode ffff960c40860c20 
+ExtensionFlags (0x00000800)  DOE_DEFAULT_SD_PRESENT
+Characteristics (0x00020000)  FILE_DEVICE_ALLOW_APPCONTAINER_TRAVERSAL
+AttachedDevice (Upper) ffff960c408ef030 \Driver\fvevol
+Device queue is not busy.
+
+
+
+0: kd> !vpb 0xffff960c408d5ab0
+Vpb at        0xffff960c408d5ab0
+Flags:        0x1 mounted 
+DeviceObject: 0xffff960c4099f030 (dt nt!DEVICE_OBJECT)
+RealDevice:   0xffff960c40860870 (dt nt!DEVICE_OBJECT)
+RefCount:     40417
+Volume Label: ""
+
+
+
+0: kd> !devobj 0xffff960c4099f030
+Device object (ffff960c4099f030) is for:
+  \FileSystem\Ntfs DriverObject ffff960c4078ecc0
+Current Irp 00000000 RefCount 0 Type 00000008 Flags 08060000
+SecurityDescriptor ffffba0bda859060 DevExt ffff960c4099f1b0 DevObjExt ffff960c409a2030 
+ExtensionFlags (0x00000800)  DOE_DEFAULT_SD_PRESENT
+Characteristics (0000000000)  
+AttachedDevice (Upper) ffff960c40847d20 \FileSystem\FltMgr
+Device queue is not busy.
+
+
+
+0: kd> !devstack ffff960c4099f030
+  !DevObj           !DrvObj            !DevExt           ObjectName
+  ffff960c40847d20  \FileSystem\FltMgr ffff960c40847e70  
+> ffff960c4099f030  \FileSystem\Ntfs   ffff960c4099f1b0  
