@@ -131,3 +131,7 @@ Na podstawie naszego małego _"dochodzenia"_ możemy dojść do wniosku, że pro
 ## Źródła
 
  * Windows Internals, Part 1,2 (Developer Reference) - Russinovich, Mark; Allievi, Andrea; Ionescu, Alex; Solomon, David
+
+## Kontakt
+
+ * https://github.com/blazej-smorawski/windows-package-manager-report
